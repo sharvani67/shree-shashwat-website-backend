@@ -200,40 +200,40 @@ router.post('/api/orders', async (req, res) => {
 
     await connection.commit();
 
-    if (paymentStatus === 'Paid' || paymentStatus === 'Pending') {
-      let productSummary = '';
+    // if (paymentStatus === 'Paid' || paymentStatus === 'Pending') {
+    //   let productSummary = '';
 
-      if (orderItems && Array.isArray(orderItems) && orderItems.length > 0) {
-        productSummary = orderItems
-          .map(item => `${item.name} (${item.weight})`)
-          .join('\n'); // or use ' ' for space-separated
-      } else if (orderItem) {
-        productSummary = `${orderItem.name} (${orderItem.weight})`;
-      }
+    //   if (orderItems && Array.isArray(orderItems) && orderItems.length > 0) {
+    //     productSummary = orderItems
+    //       .map(item => `${item.name} (${item.weight})`)
+    //       .join('\n'); // or use ' ' for space-separated
+    //   } else if (orderItem) {
+    //     productSummary = `${orderItem.name} (${orderItem.weight})`;
+    //   }
 
-      const smsText = `Dear Customer, Your Order NO. ${orderId} for ${productSummary} has been successfully placed. Thank you for shopping with us! INFAB AGRO FOODS`;
+    //   const smsText = `Dear Customer, Your Order NO. ${orderId} for ${productSummary} has been successfully placed. Thank you for shopping with us! INFAB AGRO FOODS`;
 
-      const smsParams = {
-        username: process.env.SMS_USERNAME,
-        password: process.env.SMS_PASSWORD,
-        from: process.env.SMS_SENDERID,
-        to: `91${userPhone},919743112460`, // Send to customer + additional number
-        text: smsText,
-        indiaDltContentTemplateId: process.env.SMS_ORDERTEMPLATEID,
-        indiaDltPrincipalEntityId: process.env.SMS_ENTITYID,
-        indiaDltTelemarketerId: process.env.SMS_MARKETERID
-      };
+    //   const smsParams = {
+    //     username: process.env.SMS_USERNAME,
+    //     password: process.env.SMS_PASSWORD,
+    //     from: process.env.SMS_SENDERID,
+    //     to: `91${userPhone},919743112460`, // Send to customer + additional number
+    //     text: smsText,
+    //     indiaDltContentTemplateId: process.env.SMS_ORDERTEMPLATEID,
+    //     indiaDltPrincipalEntityId: process.env.SMS_ENTITYID,
+    //     indiaDltTelemarketerId: process.env.SMS_MARKETERID
+    //   };
 
-      const smsUrl = 'https://api.kapsystem.in/sms/1/text/query';
-      const httpsAgent = new https.Agent({ rejectUnauthorized: false });
+    //   const smsUrl = 'https://api.kapsystem.in/sms/1/text/query';
+    //   const httpsAgent = new https.Agent({ rejectUnauthorized: false });
 
-      try {
-        const smsResponse = await axios.get(smsUrl, { params: smsParams, httpsAgent });
-        console.log('SMS API Response:', smsResponse.data);
-      } catch (smsErr) {
-        console.error('SMS sending failed:', smsErr.message);
-      }
-    }
+    //   try {
+    //     const smsResponse = await axios.get(smsUrl, { params: smsParams, httpsAgent });
+    //     console.log('SMS API Response:', smsResponse.data);
+    //   } catch (smsErr) {
+    //     console.error('SMS sending failed:', smsErr.message);
+    //   }
+    // }
 
 
     res.status(200).json({ success: true });
