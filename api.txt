@@ -1,0 +1,234 @@
+http://localhost:3000/api/shiprocket-login
+{
+  "email": "pavanimyana@iiiqai.com",
+  "password": "B%PD75HDi0YNq#ba"
+}
+
+
+
+
+
+http://localhost:3000/api/cancel-order
+{
+  "ids": [847573953]
+}
+
+
+
+http://localhost:3000/api/create-order
+
+{
+  "order_id": "224-500",
+  "order_date": "2025-05-24 11:11",
+  "pickup_location": "Mini_Factory_6363900869",
+  "comment": "Reseller: M/s Goku",
+  "billing_customer_name": "Naruto",
+  "billing_last_name": "Uzumaki",
+  "billing_address": "House 221B, Leaf Village",
+  "billing_address_2": "Near Hokage House",
+  "billing_city": "New Delhi",
+  "billing_pincode": 110002,
+  "billing_state": "Delhi",
+  "billing_country": "India",
+  "billing_email": "naruto@uzumaki.com",
+  "billing_phone": 9876543210,
+  "shipping_is_billing": true,
+  "order_items": [
+    {
+      "name": "Kunai",
+      "sku": "chakra123",
+      "units": 10,
+      "selling_price": 900,
+      "discount": "",
+      "tax": "",
+      "hsn": 441122
+    }
+  ],
+  "payment_method": "Prepaid",
+  "shipping_charges": 0,
+  "giftwrap_charges": 0,
+  "transaction_charges": 0,
+  "total_discount": 0,
+  "sub_total": 9000,
+  "length": 10,
+  "breadth": 15,
+  "height": 20,
+  "weight": 2.5
+}
+
+
+reponse
+
+{
+    "order_id": 847573953,
+    "channel_order_id": "224-501",
+    "shipment_id": 843933960,
+    "status": "CANCELED",
+    "status_code": 5,
+    "onboarding_completed_now": 0,
+    "awb_code": "",
+    "courier_company_id": "",
+    "courier_name": "",
+    "new_channel": false
+}
+
+
+
+http://localhost:3000/api/Shipment
+
+{
+  "shipment_id": 844001016,
+  "courier_id": ""
+}
+
+
+response
+{
+    "awb_assign_status": 1,
+    "response": {
+        "data": {
+            "courier_company_id": 225,
+            "awb_code": "FH005341647IN",
+            "cod": 0,
+            "order_id": 847641029,
+            "shipment_id": 844001016,
+            "awb_code_status": 1,
+            "assigned_date_time": {
+                "date": "2025-05-28 11:32:32.000000",
+                "timezone_type": 3,
+                "timezone": "Asia/Kolkata"
+            },
+            "applied_weight": 2.5,
+            "company_id": 4568473,
+            "courier_name": "India Post-Business Parcel Surface Prepaid",
+            "child_courier_name": null,
+            "freight_charges": 171.1,
+            "pickup_scheduled_date": "2025-05-29 09:00:00",
+            "pickup_scheduled": "2025-05-29 09:00:00",
+            "routing_code": "",
+            "rto_routing_code": null,
+            "invoice_no": "Retail00015",
+            "transporter_id": "",
+            "transporter_name": "",
+            "shipped_by": {
+                "shipper_company_name": "Ruchiraa The magic of authentic Indian flavor",
+                "shipper_address_1": "0 INFAB AGRO FOODS ,125 3 Kanminike village Hejjala circle South taluk near panc",
+                "shipper_address_2": "",
+                "shipper_city": "Bangalore ",
+                "shipper_state": "Karnataka",
+                "shipper_country": "India",
+                "shipper_postcode": "562109",
+                "shipper_first_mile_activated": 0,
+                "shipper_phone": "6363900869",
+                "lat": null,
+                "long": null,
+                "shipper_email": "infabfoods@gmail.com",
+                "extra_info": {
+                    "source": 3
+                },
+                "rto_company_name": "Ruchiraa The magic of authentic Indian flavor",
+                "rto_address_1": "0 INFAB AGRO FOODS ,125 3 Kanminike village Hejjala circle South taluk near panc",
+                "rto_address_2": "",
+                "rto_city": "Bangalore ",
+                "rto_state": "Karnataka",
+                "rto_country": "India",
+                "rto_postcode": "562109",
+                "rto_phone": "6363900869",
+                "rto_email": "infabfoods@gmail.com"
+            }
+        }
+    },
+    "no_pickup_popup": 0,
+    "quick_pick": 0
+}
+
+
+http://localhost:3000/api/tracking-order
+{
+  "awbs": [
+    "844001016"
+  ]
+}
+
+fieldvalue==order id or shipment id or AWB id
+
+response
+{
+    "844001016": {
+        "tracking_data": {
+            "track_status": 0,
+            "shipment_status": 0,
+            "shipment_track": [
+                {
+                    "id": 0,
+                    "awb_code": "",
+                    "courier_company_id": null,
+                    "shipment_id": 0,
+                    "order_id": 0,
+                    "pickup_date": "",
+                    "delivered_date": "",
+                    "weight": "",
+                    "packages": 0,
+                    "current_status": "",
+                    "delivered_to": "",
+                    "destination": "",
+                    "consignee_name": "",
+                    "origin": "",
+                    "courier_agent_details": null,
+                    "courier_name": "",
+                    "edd": null,
+                    "pod": "",
+                    "pod_status": "",
+                    "rto_delivered_date": "",
+                    "return_awb_code": "",
+                    "updated_time_stamp": ""
+                }
+            ],
+            "shipment_track_activities": null,
+            "track_url": "",
+            "qc_response": "",
+            "is_return": false,
+            "error": "Aahh! There is no shipment present against this tracking id."
+        }
+    }
+}
+
+
+
+post = /api/generate-pickup
+
+{
+	"shipment_id": ["845343932"]
+	
+}
+
+
+// POST /api/print-manifest
+{
+	"order_ids": [848985516]
+}
+
+
+
+post = /api/generate-manifest
+
+{
+	"shipment_id": [16090109]
+}
+
+
+api =  /api/generate-label  = post
+
+{
+	"shipment_id": ["845343932"]
+}
+
+
+
+api ==  /api/print-invoice ==post
+
+required==order_id
+{
+	"ids": ["848985516"]
+
+}
