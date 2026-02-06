@@ -11,7 +11,7 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-const adminEmail = 'infabfoods@gmail.com';
+const adminEmail = 'iiiqbets01@gmail.com';
 
 module.exports = {
   transporter,

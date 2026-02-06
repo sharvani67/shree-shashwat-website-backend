@@ -122,7 +122,7 @@ response
                 "shipper_phone": "6363900869",
                 "lat": null,
                 "long": null,
-                "shipper_email": "infabfoods@gmail.com",
+                "shipper_email": "iiiqbets01@gmail.com",
                 "extra_info": {
                     "source": 3
                 },
@@ -134,7 +134,7 @@ response
                 "rto_country": "India",
                 "rto_postcode": "562109",
                 "rto_phone": "6363900869",
-                "rto_email": "infabfoods@gmail.com"
+                "rto_email": "iiiqbets01@gmail.com"
             }
         }
     },
