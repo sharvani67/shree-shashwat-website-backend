@@ -9,10 +9,10 @@ router.post('/send-welcome-email', async (req, res) => {
     const mailOptions = {
       from: 'iiiqbets01@gmail.com',
       to: email,
-      subject: 'Welcome to SutraCart!',
+      subject: 'Welcome to Shree ShashwatRaj!',
       html: `
         <h2>Hi ${fullName},</h2>
-        <p>Thank you for registering on SutraCart. We're excited to have you!</p>
+        <p>Thank you for registering on Shree ShashwatRaj. We're excited to have you!</p>
         <p><strong>Your login credentials:</strong></p>
         <ul>
           <li><strong>Email:</strong> ${email}</li>
@@ -20,7 +20,7 @@ router.post('/send-welcome-email', async (req, res) => {
         </ul>
         <p>We recommend changing your password after logging in for security purposes.</p>
         <br>
-        <p>– SutraCart Team</p>
+        <p>– Shree ShashwatRaj Team</p>
       `
     };
 
@@ -39,7 +39,7 @@ router.post('/send-otp', async (req, res) => {
     const mailOptions = {
       from: 'iiiqbets01@gmail.com',
       to: email,
-      subject: 'SutraCart OTP Verification',
+      subject: 'Shree ShashwatRaj OTP Verification',
       html: `<p>Your OTP is <strong>${otp}</strong>. It is valid for 5 minutes.</p>`
     };
 
@@ -127,13 +127,13 @@ router.post('/bulk-order', async (req, res) => {
     try {
         // 1. Prepare customer email
       const customerMailOptions = {
-    from: '"SutraCart" <iiiqbets01@gmail.com>',
+    from: '"Shree ShashwatRaj" <iiiqbets01@gmail.com>',
     to: email,
     subject: 'Thank you for your Bulk Order Inquiry',
     html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
             <h2 style="color: #4a4a4a;">Dear ${full_name},</h2>
-            <p>Thank you for your bulk order inquiry with SutraCart. We've received your request and our team will contact you shortly.</p>
+            <p>Thank you for your bulk order inquiry with Shree ShashwatRaj. We've received your request and our team will contact you shortly.</p>
             
             <h3 style="color: #4a4a4a; margin-top: 20px;">Your Inquiry Details:</h3>
             <p><strong>Name:</strong> ${full_name}</p>
@@ -170,7 +170,7 @@ router.post('/bulk-order', async (req, res) => {
                 </a>
             </div>
 
-            <p style="margin-top: 30px;">Best regards,<br>The SutraCart Team</p>
+            <p style="margin-top: 30px;">Best regards,<br>The Shree ShashwatRaj Team</p>
         </div>
     `
 };
@@ -178,7 +178,7 @@ router.post('/bulk-order', async (req, res) => {
 
         // 2. Prepare admin email
         const adminMailOptions = {
-            from: '"SutraCart Notifications" <iiiqbets01@gmail.com>',
+            from: '"Shree ShashwatRaj Notifications" <iiiqbets01@gmail.com>',
             to: adminEmail,
             subject: `New Bulk Order Inquiry from ${full_name}`,
             html: `

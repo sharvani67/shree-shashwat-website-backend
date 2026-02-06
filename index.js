@@ -50,7 +50,7 @@ app.use('/', orderRoutes);
 
 // Root route
 app.get('/', (req, res) => {
-  res.send("Hello World! This is the modular SutraCart server.");
+  res.send("Hello World! This is the modular Shree ShashwatRaj server.");
 });
 
 app.listen(PORT, () => {
